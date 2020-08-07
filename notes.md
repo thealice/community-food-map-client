@@ -1,18 +1,20 @@
 ## Components:
 
 - NavBar
-    - About
+    - About?
+    - Region?
+    - FoodSourceForm (Add new FoodSource to existing Location OR add new Location + FoodSource)
     - Login?
     - Logout?
-- Filter? (by region)
-- Search?
-- FoodSourceContainer
-    - FoodSources
-        - FoodSource
-    - FoodSourceInput
-- MapContainer
-    - Map
-        - Marker
+    - Search?
+- MainContainer
+    - Filter? (by region)
+    - FoodSourceContainer
+        - FoodSources
+            - FoodSource
+    - MapContainer
+        - Map
+            - Marker
 
 ## Reducers
 
