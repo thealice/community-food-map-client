@@ -1,20 +1,25 @@
 ## Components:
 
 - NavBar
-    - About?
-    - Region?
-    - FoodSourceForm (Add new FoodSource to existing Location OR add new Location + FoodSource)
+    - Navlink: About?
+    - Change Region?
+    - NavLink: MyFoodSources
+    - NavLink: FoodSourceForm 
     - Login?
     - Logout?
-    - Search?
+    - Signup?
 - MainContainer
     - Filter? (by region)
-    - FoodSourceContainer
+    - Search?
+    - FoodSourceContainer (All FoodSources/My FoodSources)
         - FoodSources
             - FoodSource
+        - FoodSourcesForm (Add new FoodSource to existing Location OR add new Location + FoodSource)
     - MapContainer
         - Map
             - Marker
+
+
 
 ## Reducers
 

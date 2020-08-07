@@ -3,7 +3,12 @@ import React from 'react'
 const NavBar = () => {
   return (
     <div className="NavBar">
-      About, Login/Logout, Add New Food Source
+        <strong>About | </strong>
+        if logged in:
+            <strong> Greeting, Logout, My Foodsources | </strong>
+        if logged out:
+            <strong> Login/SignUp</strong>
+        <strong> | Add New FoodSource</strong>
     </div>
   )
 }
