@@ -1,25 +1,34 @@
 ## Components:
+- App
+    - NavBar
+        - Navlink: About?
+        - NavLink: MyFoodSources
+        - NavLink: FoodSourceForm (new location or add foodsource to existing location)
+        - Login?
+        - Logout?
+        - Signup?
+    - MainContainer (state: currentRegion, currentLocations, currentLocation)
+        - Filter? (by region)
+        - Search? (by zipcode?)
+        - LocationList (All Locations, my locations)
+            - LocationCard
+                - LocationShowPage
+                    - Foodsource Input
+            - LocationInput
+        - MapContainer
+            - Map(Locations)
+                - Marker(Location)
 
-- NavBar
-    - Navlink: About?
-    - Change Region?
-    - NavLink: MyFoodSources
-    - NavLink: FoodSourceForm 
-    - Login?
-    - Logout?
-    - Signup?
-- MainContainer
-    - Filter? (by region)
-    - Search?
-    - FoodSourceContainer (All FoodSources/My FoodSources)
-        - FoodSources
-            - FoodSource
-        - FoodSourcesForm (Add new FoodSource to existing Location OR add new Location + FoodSource)
-    - MapContainer
-        - Map
-            - Marker
+location list view
+locations
+location show page has foodsource input form
+location input
 
-
-
+foodsource container
+foodsources
+foodsources input
+location cards haave plan text with trees and photo
+or location show page with cards for each tree
+form directly on location show page
 ## Reducers
 
