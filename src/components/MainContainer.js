@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { fetchLocations } from '../actions/locationActions';
+import { connect } from 'react-redux';
+import LocationsList from './LocationsList'
 
-const MainContainer = () => {
-  return (
-    <div className="MainContainer">
-      <h2>Maps Container will go here</h2>
-      <h2>Food Sources Container will go here</h2>
-    </div>
-  )
+class MainContainer extends Component {
+    
+  componentDidMount() {
+      this.props.fetchLocations()
+  }
+  
+  render() {
+    if(this.props.locations.loading) {
+      return (
+        <div className="loading">
+                <p>Loading...</p>
+        </div>
+      )
+    }
+    return <LocationsList locations={this.props.locations.locations}/>
+  }
+
 }
 
-export default MainContainer
+const mapStateToProps = state => {
+  return {
+      locations: state.locations
+  }
+}
+export default connect(mapStateToProps, {fetchLocations})(MainContainer)
