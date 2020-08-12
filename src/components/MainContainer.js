@@ -17,7 +17,11 @@ class MainContainer extends Component {
         </div>
       )
     }
-    return <LocationsList locations={this.props.locations.locations}/>
+    return (
+          <div className="main-container p-8 flex">
+              <LocationsList locations={this.props.locations.locations}/>
+          </div>
+          )
   }
 
 }

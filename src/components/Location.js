@@ -9,11 +9,11 @@ const Location = ({name, street, notes, food_sources}) => {
         </li>
     )
     return (
-        <div className='location'>
+        <div className='location p-6 bg-white'>
             <h3>{name}</h3>
             <p>{street}</p>
             <p>{notes}</p>
-            <ul>{renderFoodSources}</ul>
+            <ul className="py-6">{renderFoodSources}</ul>
         </div>
     )
   }

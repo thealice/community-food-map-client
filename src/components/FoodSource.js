@@ -3,8 +3,8 @@ import React from 'react';
 const FoodSource = ({name, notes}) => {
 
     return (
-        <div className="food_source">
-            <h4>{name}</h4>
+        <div className="food-source px-6 py-1">
+            <h4 className="font-semibold">{name}</h4>
             <p>{notes}</p>
         </div>
     )

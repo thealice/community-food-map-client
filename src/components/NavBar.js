@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div className="NavBar">
+    <div className="nav-bar">
         <strong>About | </strong>
         if logged in:
             <strong> Greeting, Logout, My Foodsources | </strong>
