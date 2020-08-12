@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchLocations } from '../actions/locationActions';
 import { connect } from 'react-redux';
 import LocationsList from './LocationsList'
+import { MapContainer } from './MapContainer';
 
 class MainContainer extends Component {
     
@@ -19,6 +20,8 @@ class MainContainer extends Component {
     }
     return (
           <div className="main-container p-8 flex">
+              <MapContainer apiKey={process.env.GMAPS_API_KEY} />
+              {/* <MapContainer locations={this.props.locations.locations} /> */}
               <LocationsList locations={this.props.locations.locations}/>
           </div>
           )
