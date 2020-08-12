@@ -11,7 +11,7 @@ class MainContainer extends Component {
   }
   
   render() {
-    if(this.props.locations.loading) {
+    if(this.props.loading) {
       return (
         <div className="loading">
                 <p>Loading...</p>
@@ -20,9 +20,11 @@ class MainContainer extends Component {
     }
     return (
           <div className="main-container p-8 flex">
+            {/* add routing here, so if on hompage it will show maps container and
+            locations list, if on about show about, etc. */}
               {/* <MapContainer apiKey={process.env.GMAPS_API_KEY} /> */}
-              {/* <MapContainer locations={this.props.locations.locations} /> */}
-              <LocationsList locations={this.props.locations.locations}/>
+              {/* <MapContainer locations={this.props.locations} /> */}
+              <LocationsList locations={this.props.locations}/>
           </div>
           )
   }
@@ -31,7 +33,9 @@ class MainContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-      locations: state.locations
+      locations: state.locations.locations,
+      loading: state.locations.loading
   }
 }
+
 export default connect(mapStateToProps, {fetchLocations})(MainContainer)

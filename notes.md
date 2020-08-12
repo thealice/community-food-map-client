@@ -1,3 +1,11 @@
+## ToDos
+
+-[] Location Show page (cards for each food source?)
+-[] Add Location form to Location Show page
+-[] Add foodsouce form directly on location show page
+-[] Add LocationsContainer and place in MainContainer when on '/'
+    -[] Change to connect w/redux for loactions is on locations container instead of main
+
 ## Components:
 - App
     - NavBar
@@ -7,28 +15,22 @@
         - Login?
         - Logout?
         - Signup?
-    - MainContainer (state: currentRegion, currentLocations, currentLocation)
-        - Filter? (by region)
-        - Search? (by zipcode?)
-        - LocationList (All Locations, my locations)
-            - LocationCard
-                - LocationShowPage
-                    - Foodsource Input
-            - LocationInput
-        - MapContainer
-            - Map(Locations)
-                - Marker(Location)
+    - MainContainer (state: currentUser?, currentRegion?)
+    
+        - LocationsContainer (state: currentRegion, currentLocations, currentLocation, allLocations?)
+            - Filter? (by region)
+            - Search? (by zipcode?)
+            - LocationList (All Locations, my locations)
+                - LocationCard
+                    - LocationShowPage
+                        - FoodSourceInput (Add FoodSource to this location)
+                    - LocationInput
+            - MapContainer
+                - Map(currentLocations)
+                    - Marker(Location)
 
-location list view
-locations
-location show page has foodsource input form
-location input
 
-foodsource container
-foodsources
-foodsources input
-location cards haave plan text with trees and photo
-or location show page with cards for each tree
-form directly on location show page
 ## Reducers
+
+
 
