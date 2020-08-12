@@ -32,5 +32,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "babel-plugin-macros": "^2.8.0",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.6.2",
+    "twin.macro": "^1.7.0"
   }
 }
