@@ -1,11 +1,11 @@
 import React from 'react';
-import Location from './Location'
+import LocationCard from './LocationCard'
 
 const LocationsList = ({locations}) => {
 
     const renderLocations = locations.map(location => 
-        <li className="p-2" key={location.id}>
-            <Location name={location.name} street={location.street} notes={location.notes} food_sources={location.food_sources}/>
+        <li className="mb-4 shadow-md bg-white" key={location.id}>
+            <LocationCard name={location.name} street={location.street} notes={location.notes} food_sources={location.food_sources}/>
         </li>
     )
     
