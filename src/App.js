@@ -1,14 +1,38 @@
-import React from 'react';
-import MainContainer from './components/MainContainer';
+import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchLocations } from './actions/fetchLocations';
+import LocationsContainer from './components/LocationsContainer';
 import NavBar from './components/NavBar'
 
-function App() {
-  return (
-    <div className="App">
-      <NavBar />
-      <MainContainer />
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+      this.props.fetchLocations()
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={this.props.locations.locations} loading={this.props.locations.loading} />} />
+        </div>
+      </Router>
+
+    )
+  }
+
+
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+      locations: state.locations
+  }
+}
+
+export default connect(mapStateToProps, {fetchLocations})(App);
