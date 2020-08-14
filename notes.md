@@ -32,5 +32,9 @@
 
 ## Reducers
 
+locations
+food_sources
+regions?
+maps?
 
 

@@ -21,7 +21,7 @@ class MainContainer extends Component {
     return (
           <div className="main-container p-8 flex">
             {/* add routing here, so if on hompage it will show maps container and
-            locations list, if on about show about, etc. */}
+            locations list, if on about show about, if on individual location show page, etc. */}
               {/* <MapContainer apiKey={process.env.GMAPS_API_KEY} /> */}
               {/* <MapContainer locations={this.props.locations} /> */}
               <LocationsList locations={this.props.locations}/>
