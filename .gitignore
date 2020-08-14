@@ -14,8 +14,9 @@
 # production
 /build
 
-# generated CSS file
+# generated files
 src/assets/styles.css
+package-lock.json
 
 # misc
 .DS_Store
