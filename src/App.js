@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchLocations } from './actions/fetchLocations';
 import LocationsContainer from './components/LocationsContainer';
+import Location from './components/Location';
 import NavBar from './components/NavBar'
+import { Route, Switch, withRouter } from 'react-router-dom'
+
 
 class App extends Component {
 
@@ -15,13 +14,24 @@ class App extends Component {
   }
 
   render() {
+    if(this.props.locations.loading) {
+      return (
+        <div className="loading">
+                <p>Loading APP...</p>
+        </div>
+      )
+    }
     return (
-      <Router>
+
         <div className="App">
           <NavBar />
-          <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={this.props.locations.locations} loading={this.props.locations.loading} />} />
+          <Switch>
+            <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={this.props.locations.locations} loading={this.props.locations.loading} />} />
+            <Route exact path='/locations/:id' render={routerProps => <Location locations={this.props.locations.locations} place={this.props.locations.locations.find(place => (place.id === routerProps.match.params.id))}{...routerProps}/> } />
+          </Switch>
+          
         </div>
-      </Router>
+
 
     )
   }
