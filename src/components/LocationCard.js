@@ -10,6 +10,7 @@ const LocationCard = ({name, street, notes, food_sources}) => {
     )
     return (
         <div className='location-card'>
+            
             <div className='text-center py-3 bg-blue-500 text-white font-bold' >
             <h3>{name}</h3>
             {street}

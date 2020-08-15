@@ -14,6 +14,7 @@ class App extends Component {
   }
 
   render() {
+
     if(this.props.locations.loading) {
       return (
         <div className="loading">
@@ -21,22 +22,32 @@ class App extends Component {
         </div>
       )
     }
+
+    const locations = this.props.locations.locations
+
     return (
 
         <div className="App">
           <NavBar />
           <Switch>
-            <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={this.props.locations.locations} loading={this.props.locations.loading} />} />
-            <Route exact path='/locations/:id' render={routerProps => <Location locations={this.props.locations.locations} place={this.props.locations.locations.find(place => (place.id === routerProps.match.params.id))}{...routerProps}/> } />
-          </Switch>
-          
+            <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={locations} loading={this.props.locations.loading} />} />
+            <Route exact path='/locations/:id' render={routerProps => {
+              const place = locations && locations.find(place => (place.id === routerProps.match.params.id))
+              console.log(this.props)
+              return <Location locations={locations} place={place} {...routerProps} /> 
+            }} /> 
+          </Switch>    
         </div>
-
-
     )
   }
 
+}
 
+App.defaultProps = {
+  locations: {
+    loading: true,
+    locations: []
+  }
 }
 
 const mapStateToProps = state => {

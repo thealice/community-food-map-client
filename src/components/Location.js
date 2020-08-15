@@ -2,8 +2,11 @@ import React from 'react';
 import FoodSource from './FoodSource'
 
 
-const Location = ({ match, locations, place }) => {
+const Location = ({ match, locations, place}) => {
+    console.log(place && place)
+    const location = locations && locations.find(place => ((place.id === match.params.id)))
 
+    console.log(location)
     // const renderFoodSources = place.food_sources.map(f => 
     //     <li key={f.key}>
     //         <FoodSource name={f.name} notes={f.notes}/>
@@ -12,16 +15,19 @@ const Location = ({ match, locations, place }) => {
     return (
 
         <div className='location'>
-            {console.log(locations.find(place => (place.id === match.params.id)))}
             
-            {/* <h3>{place.name}</h3>
-            {place.street}
-            {place.city}, {place.state} {place.zipcode} {place.notes}*/}
+    <h3>Hi this is an individual location {place.name}</h3>
+            
             
             
             {/* <ul className="p-6 bg-white">{renderFoodSources}</ul> */}
         </div>
     )
+  }
+
+  Location.defaultProps = {
+    locations: [],
+    place: {}
   }
 
   export default Location;
