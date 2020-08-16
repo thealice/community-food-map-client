@@ -5,6 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 import LocationsList from '../components/LocationsList'
 import Location from '../components/Location';
 import { MapContainer } from './MapContainer';
+import NewLocationFormWrapper from '../components/NewLocationFormWrapper'
 
 class LocationsContainer extends Component {
 
@@ -19,17 +20,20 @@ class LocationsContainer extends Component {
       return (
         
           <Switch>
-            <Route exact path='/' render={routerProps => {
+
+            <Route exact path='/locations/new' component={NewLocationFormWrapper} />
+            <Route exact path='/locations/:id' render={routerProps => {
+              const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
+              return <Location locations={this.props.locations} place={place} {...routerProps} /> 
+            }} />
+            <Route path='/' render={routerProps => {
               return (
                 <div className="locations-container p-8 flex">
                   {/* <MapContainer />  */}
                   <LocationsList {...routerProps} locations={this.props.locations} />
                 </div> )}
             }/>
-            <Route exact path='/locations/:id' render={routerProps => {
-              const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
-              return <Location locations={this.props.locations} place={place} {...routerProps} /> 
-            }} /> 
+ 
           </Switch>    
           
       )
@@ -52,4 +56,10 @@ const mapStateToProps = state => {
   return state.locations
 }
 
-export default connect(mapStateToProps, {fetchLocations})(LocationsContainer)
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchLocations: () => dispatch(fetchLocations())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LocationsContainer)
