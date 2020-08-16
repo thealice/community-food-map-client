@@ -14,23 +14,29 @@ class LocationsContainer extends Component {
   
   render() {
     const locations = this.props.locations
+
     if(locations.length > 0) {
       return (
-            <div className="locations-container p-8 flex">
-              <Switch>
-                <Route exact path='/' render={routerProps => <LocationsList {...routerProps} locations={this.props.locations} />} />
-                <Route exact path='/locations/:id' render={routerProps => {
-                  const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
-                  return <Location locations={this.props.locations} place={place} {...routerProps} /> 
-                }} /> 
-              </Switch>    
-              
-            </div>
-            )
+        
+          <Switch>
+            <Route exact path='/' render={routerProps => {
+              return (
+                <div className="locations-container p-8 flex">
+                  {/* <MapContainer />  */}
+                  <LocationsList {...routerProps} locations={this.props.locations} />
+                </div> )}
+            }/>
+            <Route exact path='/locations/:id' render={routerProps => {
+              const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
+              return <Location locations={this.props.locations} place={place} {...routerProps} /> 
+            }} /> 
+          </Switch>    
+          
+      )
     }
     return (
       <div className="loading">
-            <div className="p-8 flex">Loading Locations...</div>
+        <div className="p-8 flex">Loading Locations...</div>
       </div>
     )
   }

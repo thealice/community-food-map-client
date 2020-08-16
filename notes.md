@@ -37,8 +37,12 @@
 ## Reducers
 
 locations
+(my locations?)
 food_sources
+(my food_sources?)
 regions?
 maps?
+loginform
+currentuser
 
 
