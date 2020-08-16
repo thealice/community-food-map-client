@@ -1,33 +1,49 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchLocations } from '../actions/fetchLocations';
+import { Route, Switch, withRouter } from 'react-router-dom'
 import LocationsList from '../components/LocationsList'
+import Location from '../components/Location';
 import { MapContainer } from './MapContainer';
 
 class LocationsContainer extends Component {
-    
-  render() {
 
-    return (
-      
-          <div className="locations-container p-8 flex">
-            <LocationsList locations={this.props.locations} {...this.props.routerProps} />
-            {/* <Switch>
-              <Route path='/locations/:id' render={props => {
-                  const location = this.props.locations.find(location => location.id === props.match.params.id)
-                  console.log(location)
-                  return <Location location={location} food_sources={location.food_sources} {...props} />
-                }
-              }/>
-            </Switch> */}
-
-              {/* <MapContainer apiKey={process.env.GMAPS_API_KEY} /> */}
-              {/* <MapContainer locations={this.props.locations} /> */}
-             
-          </div>
-          )
+  componentDidMount() {
+      this.props.fetchLocations()
   }
-
-
+  
+  render() {
+    const locations = this.props.locations
+    if(locations.length > 0) {
+      return (
+            <div className="locations-container p-8 flex">
+              <Switch>
+                <Route exact path='/' render={routerProps => <LocationsList {...routerProps} locations={this.props.locations} />} />
+                <Route exact path='/locations/:id' render={routerProps => {
+                  const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
+                  return <Location locations={this.props.locations} place={place} {...routerProps} /> 
+                }} /> 
+              </Switch>    
+              
+            </div>
+            )
+    }
+    return (
+      <div className="loading">
+            <div className="p-8 flex">Loading Locations...</div>
+      </div>
+    )
+  }
 
 }
 
-export default LocationsContainer
+LocationsContainer.defaultProps = {
+  locations: []
+}
+
+
+const mapStateToProps = state => {
+  return state.locations
+}
+
+export default connect(mapStateToProps, {fetchLocations})(LocationsContainer)
