@@ -1,9 +1,10 @@
 ## ToDos
 
--[] why is Location undefined in the router in App and also in Location component??? does it have to do with this not being asyc? console.log(locations) brings up `undefined` first and then the appropriate array when doing it within Location component
--[] Location Show page (cards for each food source?)
+-[x] why is Location undefined in the router in App and also in Location component??? does it have to do with this not being asyc? console.log(locations) brings up `undefined` first and then the appropriate array when doing it within Location component. (solved for now by only rendering locations components after locactions is greater than zero, and also fixing the find function because id was a string, not an integer)
+-[x] add "LOAD_LOCATIONS" to fetchLocations Action
+-[] Location Show page (list items for each food source?)
 -[] Add Location form to Location Show page
--[] Link Location Card to Location show page
+-[x] Link Location Card to Location show page
 -[] Add foodsouce form directly on location show page
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
