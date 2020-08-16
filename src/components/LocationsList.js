@@ -15,7 +15,7 @@ const LocationsList = ({ locations }) => {
     return (
         <div className="locations-list flex-col max-w-sm">
             <ul>
-                <li className="text-center"><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-800 rounded mb-3">Add new Location</button></li>
+                <Link to="/locations/new"><li className="text-center"><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-800 rounded mb-3">Add new Location</button></li></Link>
                 {renderLocationCards}
             </ul> 
         </div>
