@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LocationsList from './LocationsList'
+import LocationsList from '../components/LocationsList'
 import { MapContainer } from './MapContainer';
 
 class LocationsContainer extends Component {

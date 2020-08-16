@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Location = ({ place }) => {
+const Location = ({ match, place }) => {
 
     const renderFoodSources = place.food_sources.map(f => 
         <li className="py-2" key={f.key}>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchLocations } from './actions/fetchLocations';
-import LocationsContainer from './components/LocationsContainer';
-import Location from './components/Location';
-import NavBar from './components/NavBar'
+import { fetchLocations } from '../actions/fetchLocations';
+import LocationsContainer from './LocationsContainer';
+import Location from '../components/Location';
+import NavBar from '../components/NavBar'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
 
@@ -36,9 +36,7 @@ class App extends Component {
       </div>
     )
     
-
-
-    }
+  }
     
 
 
