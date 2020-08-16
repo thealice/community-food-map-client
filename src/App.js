@@ -14,43 +14,46 @@ class App extends Component {
   }
 
   render() {
-
-    if(this.props.locations.loading) {
-      return (
-        <div className="loading">
-                <p>Loading APP...</p>
-        </div>
-      )
-    }
-
     const locations = this.props.locations.locations
-
+    if(locations.length > 0) {
+      return (
+            <div className="App">
+              <NavBar />
+              <Switch>
+                <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={this.props.locations.locations} loading={this.props.locations.loading} />} />
+                <Route exact path='/locations/:id' render={routerProps => {
+                  const place = this.props.locations.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
+                  return <Location locations={this.props.locations.locations} place={place} {...routerProps} /> 
+                }} /> 
+              </Switch>    
+            </div>
+        )
+    }
     return (
-
-        <div className="App">
-          <NavBar />
-          <Switch>
-            <Route exact path='/' render={routerProps => <LocationsContainer {...routerProps} locations={locations} loading={this.props.locations.loading} />} />
-            <Route exact path='/locations/:id' render={routerProps => {
-              const place = locations && locations.find(place => (place.id === routerProps.match.params.id))
-              console.log(this.props)
-              return <Location locations={locations} place={place} {...routerProps} /> 
-            }} /> 
-          </Switch>    
-        </div>
+      <div className="loading">
+           <NavBar />
+            <div className="p-8 flex">Loading APP...</div>
+      </div>
     )
-  }
+    
+
+
+    }
+    
+
+
+
 
 }
 
-App.defaultProps = {
-  locations: {
-    loading: true,
-    locations: []
-  }
-}
+// App.defaultProps = {
+//   locations: {
+//     locations: []
+//   }
+// }
 
 const mapStateToProps = state => {
+  
   return {
       locations: state.locations
   }
