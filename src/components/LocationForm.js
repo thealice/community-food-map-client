@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StyledForm from '../styles/index.js'
 import { updateLocationForm } from '../actions/locationForm'
+import { resetLocationForm } from '../actions/locationForm'
 
 class LocationForm extends Component {
     
     handleOnChange = (e) => {
         const { name, value } = e.target
+        // dispatch the action created by the action creator
         this.props.updateLocationForm(name, value)
     }
 
     handleOnSubmit = (e) => {
         e.preventDefault();
+        //do some stuff
+        //then reset form
+        console.log(e.value)
+        this.props.resetLocationForm();
 
     }
 
@@ -62,5 +68,16 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {updateLocationForm})(LocationForm);
+const mapDispatchToProps = dispatch => {
+    return {
+        updateLocationForm: (name, value) => {
+            dispatch(updateLocationForm(name, value))
+        },
+        resetLocationForm: () => {
+            dispatch(resetLocationForm())
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LocationForm);
 
