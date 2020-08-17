@@ -1,16 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div className="nav-bar">
-        <strong>About | </strong>
-        if logged in:
-            <strong> Greeting, Logout, My Foodsources | </strong>
-        if logged out:
-            <strong> Login/SignUp</strong>
-        <strong> | Add New FoodSource</strong>
+    <div className="navbar flex flex-row">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/locations/new">Add New Location</NavLink>
     </div>
   )
 }
 
-export default NavBar
+export default NavBar;
