@@ -14,16 +14,15 @@ class LocationForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        //do some stuff
-        //then reset form
-        console.log(e.value)
-        this.props.resetLocationForm();
+        //async post fetch to api 
+        //then reset form this.props.resetLocationForm();
+        
 
     }
 
     render() {
 
-        const { history, name, notes, street, city, state, zipcode, lat, lng} = this.props
+        const { name, notes, street, city, state, zipcode, lat, lng} = this.props
         
         return (
             <div className="location-input p-8">
