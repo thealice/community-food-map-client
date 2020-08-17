@@ -1,40 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StyledForm from '../styles/index.js'
+import { updateLocationForm } from '../actions/locationForm'
 
 class LocationForm extends Component {
+    
+    handleOnChange = (e) => {
+        const { name, value } = e.target
+        updateLocationForm(name, value)
+    }
+
     render() {
+        const { history, name, notes, street, city, state, zipcode, lat, lng} = this.props
         return (
             <div className="location-input p-8">
                 
                 <StyledForm>
                     <form>
                         <label htmlFor="name" className="hidden" >Name:</label>
-                        <input type="text" placeholder="Name" name="name" value=""/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="Name" name="name" value={name}/>
 
                         <label htmlFor="notes" className="hidden" >Notes:</label>
-                        <textarea placeholder="Notes...for example: 'Fruit accessible from sidewalk is free to take, please do not hop fence.'" name="notes"/>
+                        <textarea onChange={this.handleOnChange} placeholder="Notes...for example: 'Fruit accessible from sidewalk is free to take, please do not hop fence.'" name="notes" value={notes} />
                         
                         <label htmlFor="street" className="hidden">Street Address</label>
-                        <input type="text" placeholder="Street" name="street" value=""/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="Street" name="street" value={street}/>
 
                         <label htmlFor="city" className="hidden">City</label>
-                        <input type="text" placeholder="City" name="city" value=""/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="City" name="city" value={city}/>
 
                         <label htmlFor="state" className="hidden">State</label>
-                        <input type="text" placeholder="State" name="state" value=""/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="State" name="state" value={state}/>
 
                         <label htmlFor="zipcode" className="hidden">Zipcode</label>
-                        <input type="text" placeholder="Zipcode" name="zipcode" value=""/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="Zipcode" name="zipcode" value={zipcode}/>
 
                         <label htmlFor="latitude" className="hidden">Latitude:</label>
-                        <input type="number" placeholder="Latitude (required)" name="lat" value="" required />
+                        <input onChange={this.handleOnChange} type="number" placeholder="Latitude (required)" name="lat" value={lat} required />
                         
                         <label htmlFor="longitude" className="hidden">Longitude:</label>
-                        <input type="number" placeholder="Longitude (required)" name="lng" value="" required /> 
-                        
-                        <label htmlFor="zoom" className="hidden">Zoom:</label>
-                        <input type="number" className="hidden" placeholder="Zoom" name="zoom" value="17"/>
+                        <input onChange={this.handleOnChange} type="number" placeholder="Longitude (required)" name="lng" value={lng} required /> 
 
                         <button type="submit" className="button">Submit</button>
                     </form>
@@ -44,5 +49,11 @@ class LocationForm extends Component {
     }
 }
 
-export default LocationForm;
+const mapStateToProps = state => {
+    return {
+        formData: state.locationForm
+    }
+}
+
+export default connect(mapStateToProps, {updateLocationForm})(LocationForm);
 
