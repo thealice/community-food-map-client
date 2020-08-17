@@ -4,7 +4,7 @@ import FoodSource from './FoodSource'
 const LocationCard = ({name, street, notes, food_sources}) => {
 
     const renderFoodSources = food_sources.map(f => 
-        <li key={f.key}>
+        <li key={f.id}>
             <FoodSource name={f.name} notes={f.notes}/>
         </li>
     )
