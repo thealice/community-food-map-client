@@ -10,13 +10,20 @@ class LocationForm extends Component {
         updateLocationForm(name, value)
     }
 
+    handleOnSubmit = (e) => {
+        e.preventDefault();
+
+    }
+
     render() {
+
         const { history, name, notes, street, city, state, zipcode, lat, lng} = this.props
+        
         return (
             <div className="location-input p-8">
                 
                 <StyledForm>
-                    <form>
+                    <form onSubmit={this.handleOnSubmit}>
                         <label htmlFor="name" className="hidden" >Name:</label>
                         <input onChange={this.handleOnChange} type="text" placeholder="Name" name="name" value={name}/>
 
@@ -36,10 +43,10 @@ class LocationForm extends Component {
                         <input onChange={this.handleOnChange} type="text" placeholder="Zipcode" name="zipcode" value={zipcode}/>
 
                         <label htmlFor="latitude" className="hidden">Latitude:</label>
-                        <input onChange={this.handleOnChange} type="number" placeholder="Latitude (required)" name="lat" value={lat} required />
+                        <input onChange={this.handleOnChange} type="decimal" placeholder="Latitude (required)" name="lat" value={lat} required />
                         
                         <label htmlFor="longitude" className="hidden">Longitude:</label>
-                        <input onChange={this.handleOnChange} type="number" placeholder="Longitude (required)" name="lng" value={lng} required /> 
+                        <input onChange={this.handleOnChange} type="decimal" placeholder="Longitude (required)" name="lng" value={lng} required /> 
 
                         <button type="submit" className="button">Submit</button>
                     </form>
