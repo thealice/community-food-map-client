@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import regions from './reducers/regions.js';
 import locations from './reducers/locations.js'
+import locationForm from './reducers/locationForm.js'
 
 const reducer = combineReducers({
-  regions,
-  locations
+  locations,
+  locationForm
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
