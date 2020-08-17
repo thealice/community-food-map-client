@@ -7,7 +7,7 @@ class LocationForm extends Component {
     
     handleOnChange = (e) => {
         const { name, value } = e.target
-        updateLocationForm(name, value)
+        this.props.updateLocationForm(name, value)
     }
 
     handleOnSubmit = (e) => {
