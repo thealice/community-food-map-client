@@ -3,10 +3,9 @@ import React from 'react';
 const Location = ({ match, place }) => {
 
     const renderFoodSources = place.food_sources.map(f => 
-        <li className="py-2" key={f.key}>
+        <li className="py-2" key={f.id}>
             {f.name}<br/>
             {f.notes}<br />
-            <button className="btn">Edit Food Source</button>
         </li>
     )
     let address;
@@ -20,7 +19,10 @@ const Location = ({ match, place }) => {
             <p>{address}</p>
             <p>{place.notes}</p>
             <h2>Food at this Location:</h2>
-            <ul>{renderFoodSources}</ul>
+            <ul>
+                {renderFoodSources}
+                <li className="py-2"><button>Add new food-source at this location</button></li>
+            </ul>
         </div>
     )
   }
