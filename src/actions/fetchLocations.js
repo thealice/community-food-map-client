@@ -1,5 +1,4 @@
 export const fetchLocations = () => {
-    debugger
     return (dispatch) => {
 
         dispatch({ type: 'LOADING_LOCATIONS' })
