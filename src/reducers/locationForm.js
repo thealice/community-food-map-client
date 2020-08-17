@@ -13,9 +13,12 @@ const initialState = {
 
 export default (state=initialState, action) => {
     switch (action.type) {
-    case "UPDATE_NEW_LOCATION_FORM":
-        return action.formData
-    case "RESET_NEW_LOCATION_FORM":
+    case "UPDATE_LOCATION_FORM":
+        return {
+            ...state,
+            [action.formData.name]: action.formData.value
+        }
+    case "RESET_LOCATION_FORM":
         return initialState
     default:
         return state
