@@ -9,6 +9,8 @@
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
 -[] STRETCH: add map to location show page
+-[] TODO: right now user_id, region_id and zoom are hardcoded into the location forms's FormData in the locationForm reducer as initial state. Update this as you add user and regional functionality (and consider removing zoom data from database and only using it on frontend?)
+-[]TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
 
 ## Components:
 - App
