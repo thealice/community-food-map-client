@@ -1,4 +1,6 @@
-export const createLocation = (locationData) => {
+import { resetLocationForm } from './locationForm'
+
+export const createLocation = (locationData, history) => {
   
   const sendableLocationData = {
     name: locationData.name,
@@ -29,9 +31,11 @@ export const createLocation = (locationData) => {
       } else {
         // add new location to state
         dispatch(addLocation(responseJSON.data.attributes))
+        // reset location form values
+        dispatch(resetLocationForm())
+        // reroute to the new location show page
+        history.push(`/locations/${responseJSON.data.attributes.id}`)
       }
-      // reroute to the new location show page
-
     })
   }
 }
