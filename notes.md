@@ -17,6 +17,7 @@
 -[] STRETCH: add map filters so map will change depending on region, etc.
 -[] STRETCH: clicking on Location Cards will popup info window on map
 -[] STRETCH: Add Search
+-[] TODO: add instructions to forms
 -[] TODO: right now user_id, region_id and zoom are hardcoded into the location forms's FormData in the locationForm reducer as initial state. Update this as you add user and regional functionality (and consider removing zoom data from database and only using it on frontend?)
 -[] TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
 -[] TODO: lat and lng are being serialized as strings because they are decimals, i believe this is the intended behavior to maintain accuracy. gotta figure out where to convert (I do parse back into floats when adding a new location)
