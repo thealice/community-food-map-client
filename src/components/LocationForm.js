@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import StyledForm from '../styles/index.js'
 import { updateLocationForm } from '../actions/locationForm'
 import { resetLocationForm } from '../actions/locationForm'
+import { createLocation } from '../actions/createLocation'
 
 class LocationForm extends Component {
     
@@ -14,6 +15,8 @@ class LocationForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
+        console.log(this.props.formData)
+        this.props.createLocation(this.props.formData)
         //async post fetch to api 
         //then reset form this.props.resetLocationForm();
         
@@ -21,7 +24,7 @@ class LocationForm extends Component {
     }
 
     render() {
-
+        console.log(this.props.formData)
         const { name, notes, street, city, state, zipcode, lat, lng} = this.props
         
         return (
@@ -48,10 +51,10 @@ class LocationForm extends Component {
                         <input onChange={this.handleOnChange} type="text" placeholder="Zipcode" name="zipcode" value={zipcode}/>
 
                         <label htmlFor="latitude" className="hidden">Latitude:</label>
-                        <input onChange={this.handleOnChange} type="decimal" placeholder="Latitude (required)" name="lat" value={lat} required />
+                        <input onChange={this.handleOnChange} type="number" step="any" placeholder="Latitude (required)" name="lat" value={lat} required />
                         
                         <label htmlFor="longitude" className="hidden">Longitude:</label>
-                        <input onChange={this.handleOnChange} type="decimal" placeholder="Longitude (required)" name="lng" value={lng} required /> 
+                        <input onChange={this.handleOnChange} type="number" step="any" placeholder="Longitude (required)" name="lng" value={lng} required /> 
 
                         <button type="submit" className="button">Submit</button>
                     </form>
@@ -74,6 +77,9 @@ const mapDispatchToProps = dispatch => {
         },
         resetLocationForm: () => {
             dispatch(resetLocationForm())
+        },
+        createLocation: formData => {
+            dispatch(createLocation(formData))
         }
     }
 }
