@@ -15,16 +15,15 @@ class LocationForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.formData)
-        this.props.createLocation(this.props.formData)
-        //async post fetch to api 
-        //then reset form this.props.resetLocationForm();
-        
-
+        //async post fetch to api and
+        //add new location to state and
+        //reset form values and
+        //redirect to location show page
+        this.props.createLocation(this.props.formData, this.props.history)
     }
 
     render() {
-        console.log(this.props.formData)
+
         const { name, notes, street, city, state, zipcode, lat, lng} = this.props
         
         return (
@@ -78,8 +77,8 @@ const mapDispatchToProps = dispatch => {
         resetLocationForm: () => {
             dispatch(resetLocationForm())
         },
-        createLocation: formData => {
-            dispatch(createLocation(formData))
+        createLocation: (formData, history) => {
+            dispatch(createLocation(formData, history))
         }
     }
 }
