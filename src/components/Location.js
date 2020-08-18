@@ -3,7 +3,7 @@ import Address from './Address'
 
 const Location = ({ match, place }) => {
 
-    const {name, notes, street, city, state, zipcode} = place
+    const {name, notes} = place
 
     const renderFoodSources = place.food_sources.map(f => 
         <li className="py-2" key={f.id}>
@@ -16,7 +16,6 @@ const Location = ({ match, place }) => {
 
         <div className='location p-8'>  
             <h1>{name}</h1>
-            {console.log(place)}
             <p><Address place={place} /></p>
             <p>{notes}</p>
             <h2>Food at this Location:</h2>

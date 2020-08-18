@@ -8,12 +8,13 @@ import { MapContainer } from './MapContainer';
 import LocationForm from '../components/LocationForm'
 
 class LocationsContainer extends Component {
-
+  
   componentDidMount() {
       this.props.fetchLocations()
   }
   
   render() {
+
     const locations = this.props.locations
 
     if(locations.length > 0) {
