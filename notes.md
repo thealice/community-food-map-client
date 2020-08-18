@@ -6,7 +6,8 @@
 -[x] Add Location form to Location Show page
 -[x] Link Location Card to Location show page
 -[x] after new location form is submitted, redirect to newly create location's show page
--[] update address info that shows on location show page
+-[x] update address info that shows on location show page
+-[] re-evaluate when to passdown props and when to mapStateToProps (save currentLocation to store/state?)
 -[] Add foodsouce form directly on location show page
 -[] Add "About" component and blurb
 -[] Add MapContainer to homepage
