@@ -23,12 +23,13 @@ export const createLocation = (locationData) => {
       body: JSON.stringify(sendableLocationData)
     })
     .then(response => response.json())
-    .catch(console.log)
     .then(responseJSON => {
-      console.log(responseJSON)
-
-      // add new location to state
-      // return dispatch({ type: 'ADD_LOCATION', locations})
+      if (responseJSON.error) {
+        alert(responseJSON.error)
+      } else {
+        // add new location to state
+        dispatch(addLocation(responseJSON.data.attributes))
+      }
       // reroute to the new location show page
 
     })
