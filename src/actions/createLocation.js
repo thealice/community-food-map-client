@@ -27,8 +27,10 @@ export const createLocation = (locationData) => {
     .then(responseJSON => {
       console.log(responseJSON)
 
-
+      // add new location to state
       // return dispatch({ type: 'ADD_LOCATION', locations})
+      // reroute to the new location show page
+
     })
   }
 }
