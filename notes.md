@@ -3,14 +3,16 @@
 -[x] why is Location undefined in the router in App and also in Location component??? does it have to do with this not being asyc? console.log(locations) brings up `undefined` first and then the appropriate array when doing it within Location component. (solved for now by only rendering locations components after locactions is greater than zero, and also fixing the find function because id was a string, not an integer)
 -[x] add "LOAD_LOCATIONS" to fetchLocations Action
 -[x] Location Show page (list items for each food source?)
--[] Add Location form to Location Show page
+-[x] Add Location form to Location Show page
 -[x] Link Location Card to Location show page
+-[] after new location form is submitted, redirect to newly create location's show page
 -[] Add foodsouce form directly on location show page
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
 -[] STRETCH: add map to location show page
 -[] TODO: right now user_id, region_id and zoom are hardcoded into the location forms's FormData in the locationForm reducer as initial state. Update this as you add user and regional functionality (and consider removing zoom data from database and only using it on frontend?)
 -[]TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
+-[]TODO: lat and lng are being serialized as strings because they are decimals, i believe this is the intended behavior to maintain accuracy. gotta figure out where to convert (I do parse back into floats when adding a new location)
 
 ## Components:
 - App
