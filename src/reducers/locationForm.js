@@ -6,9 +6,10 @@ const initialState = {
     state: "",
     zipcode: "",
     zoom: 17,
-    lat: "",
-    lng: "",
-    user_id: 1
+    lat: 37.8712783,
+    lng: -122.3714783,
+    userId: 1,
+    regionId: 3
 }
 
 export default (state=initialState, action) => {
