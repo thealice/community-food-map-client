@@ -5,14 +5,22 @@
 -[x] Location Show page (list items for each food source?)
 -[x] Add Location form to Location Show page
 -[x] Link Location Card to Location show page
--[] after new location form is submitted, redirect to newly create location's show page
+-[x] after new location form is submitted, redirect to newly create location's show page
+-[] update address info that shows on location show page
 -[] Add foodsouce form directly on location show page
+-[] Add "About" component and blurb
+-[] Add MapContainer to homepage
+-[] Place markers for each location
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
 -[] STRETCH: add map to location show page
+-[] STRETCH: add map filters so map will change depending on region, etc.
+-[] STRETCH: clicking on Location Cards will popup info window on map
+-[] STRETCH: Add Search
 -[] TODO: right now user_id, region_id and zoom are hardcoded into the location forms's FormData in the locationForm reducer as initial state. Update this as you add user and regional functionality (and consider removing zoom data from database and only using it on frontend?)
--[]TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
--[]TODO: lat and lng are being serialized as strings because they are decimals, i believe this is the intended behavior to maintain accuracy. gotta figure out where to convert (I do parse back into floats when adding a new location)
+-[] TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
+-[] TODO: lat and lng are being serialized as strings because they are decimals, i believe this is the intended behavior to maintain accuracy. gotta figure out where to convert (I do parse back into floats when adding a new location)
+-[] TODO: remove default props if not needed (consider revisiting loading and getting rid of the conditional render in LocationsContainer)
 
 ## Components:
 - App
