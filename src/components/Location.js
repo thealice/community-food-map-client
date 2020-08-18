@@ -1,6 +1,9 @@
 import React from 'react';
+import Address from './Address'
 
 const Location = ({ match, place }) => {
+
+    const {name, notes, street, city, state, zipcode} = place
 
     const renderFoodSources = place.food_sources.map(f => 
         <li className="py-2" key={f.id}>
@@ -8,16 +11,14 @@ const Location = ({ match, place }) => {
             {f.notes}<br />
         </li>
     )
-    let address;
-    if(place.street && place.city) {
-        address = `${place.street}, ${place.city}, ${place.state} ${place.zipcode}`
-    }
+
     return (
 
         <div className='location p-8'>  
-            <h1>{place.name}</h1>
-            <p>{address}</p>
-            <p>{place.notes}</p>
+            <h1>{name}</h1>
+            {console.log(place)}
+            <p><Address place={place} /></p>
+            <p>{notes}</p>
             <h2>Food at this Location:</h2>
             <ul>
                 {renderFoodSources}
@@ -25,11 +26,6 @@ const Location = ({ match, place }) => {
             </ul>
         </div>
     )
-  }
-
-  Location.defaultProps = {
-    locations: [],
-    place: {}
   }
 
   export default Location;

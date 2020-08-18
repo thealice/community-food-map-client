@@ -7,7 +7,7 @@ const LocationsList = ({ locations }) => {
     const renderLocationCards = locations.map(location => 
         <li className="mb-4 shadow-md bg-white" key={location.id}>
             <Link to={`/locations/${location.id}`} >
-                <LocationCard name={location.name} street={location.street} notes={location.notes} food_sources={location.food_sources} />
+                <LocationCard location={location} />
             </Link>
         </li>
     )

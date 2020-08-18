@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Address = (props) => {
+const Address = ({ place }) => {
 
-    const { street, city, state, zipcode } = props
+    const { street, city, state, zipcode } = place
     
     if(street && city && state) {
         return (
