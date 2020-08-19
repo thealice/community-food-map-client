@@ -1,4 +1,8 @@
-export default (state={ locations: [], loading: false }, action) => {
+const initialState = {
+    locations: [], 
+    loading: false
+}
+export default (state=initialState, action) => {
     switch (action.type) {
         case 'LOADING_LOCATIONS':
             return {
