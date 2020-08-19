@@ -8,12 +8,18 @@
 -[x] after new location form is submitted, redirect to newly create location's show page
 -[x] update address info that shows on location show page
 -[] re-evaluate when to passdown props and when to mapStateToProps (save currentLocation to store/state?)
--[] Add foodsouce form directly on location show page
+-[x] Add foodsouce form directly on location show page
+-[] Get foodsource form post fetch working
+-[] Hide add foodsource form until button is clicked
+-[] fix up styled form component
 -[] Add "About" component and blurb
 -[] Add MapContainer to homepage
 -[] Place markers for each location
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
+-[] STRETCH: add update/delete functionality for locations/foodsources
+-[] STRETCH: add user login/logout
+-[] STRETCH: limit edit/delete to owner of location/foodsource
 -[] STRETCH: add map to location show page
 -[] STRETCH: add map filters so map will change depending on region, etc.
 -[] STRETCH: clicking on Location Cards will popup info window on map
