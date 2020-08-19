@@ -21,7 +21,7 @@ class Location extends Component {
     }
 
     render() {
-        const {place} = this.props
+        const {place, match} = this.props
 
         return (
             <div className='location p-8 flex'>  

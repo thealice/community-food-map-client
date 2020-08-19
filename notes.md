@@ -7,10 +7,18 @@
 -[x] Link Location Card to Location show page
 -[x] after new location form is submitted, redirect to newly create location's show page
 -[x] update address info that shows on location show page
--[] re-evaluate when to passdown props and when to mapStateToProps (save currentLocation to store/state?)
+-[] re-evaluate when to passdown props and when to mapStateToProp
+    -[] fix app rendering/performance
+    -[] save currentLocation to store/state
 -[x] Add foodsouce form directly on location show page
 -[] Get foodsource form post fetch working
--[] Hide add foodsource form until button is clicked
+    -[] Save foodsource to backend
+    -[] Add foodSource To location state
+    -[] Reset FoodSource form
+    -[] set renderForm to false
+    -[] redirect back to location
+    -[] STRETCH: Add Foodsources to store for ALL foodsources(fetch foodsources in a component did mount somewhere)
+-[x] Hide add foodsource form until button is clicked
 -[] fix up styled form component
 -[x] Add "About" component and blurb
 -[] 
@@ -59,8 +67,9 @@
 
 locations
 (my locations?)
+current location?
 food_sources
-(my food_sources?)
+(my foodsources?)
 regions?
 maps?
 loginform
