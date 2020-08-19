@@ -12,7 +12,7 @@
 -[] Get foodsource form post fetch working
 -[] Hide add foodsource form until button is clicked
 -[] fix up styled form component
--[] Add "About" component and blurb
+-[x] Add "About" component and blurb
 -[] 
 -[] Add MapContainer to homepage
 -[] Place markers for each location
