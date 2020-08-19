@@ -6,6 +6,7 @@ import LocationsList from '../components/LocationsList'
 import Location from '../components/Location';
 import { MapContainer } from './MapContainer';
 import LocationForm from '../components/LocationForm'
+import About from '../components/About'
 
 class LocationsContainer extends Component {
   
@@ -23,6 +24,7 @@ class LocationsContainer extends Component {
           <Switch>
 
             <Route exact path='/locations/new' component={LocationForm} />
+            <Route exact path='/about' component={About} />
             <Route exact path='/locations/:id' render={routerProps => {
               const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
               return <Location locations={this.props.locations} place={place} {...routerProps} /> 
