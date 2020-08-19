@@ -19,16 +19,16 @@ class LocationsContainer extends Component {
     const locations = this.props.locations
 
     if(locations.length > 0) {
-      return (
-        
+      return ( 
           <Switch>
 
             <Route exact path='/locations/new' component={LocationForm} />
             <Route exact path='/about' component={About} />
+
             <Route exact path='/locations/:id' render={routerProps => {
-              const place = this.props.locations.find( ({ id }) => id === Number(routerProps.match.params.id) );
-              return <Location locations={this.props.locations} place={place} {...routerProps} /> 
-            }} />
+              return <Location locations={this.props.locations} {...routerProps} />;
+            } } />
+
             <Route path='/' render={routerProps => {
               return (
                 <div className="locations-container p-8 flex">
@@ -37,8 +37,7 @@ class LocationsContainer extends Component {
                 </div> )}
             }/>
  
-          </Switch>    
-          
+          </Switch>      
       )
     }
     return (

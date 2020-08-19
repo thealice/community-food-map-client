@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import Address from './Address'
 import FoodSourceForm from './FoodSourceForm';
 
-const Location = ( {locations, history} ) => {
+const Location = ( {match, locations, history} ) => {
+
+    const place = locations.find( ({ id }) => id === Number(match.params.id) );
 
     const renderFoodSources = (food_sources) => {
        return food_sources.map(f => 
