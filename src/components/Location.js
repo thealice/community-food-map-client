@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import Address from './Address'
 import FoodSourceForm from './FoodSourceForm';
 
-class Location extends Component {
-    
-    state = {
-        renderForm: false
-    }
+const Location = ( {locations, history} ) => {
 
-    renderFoodSources = (food_sources) => {
+    const renderFoodSources = (food_sources) => {
        return food_sources.map(f => 
         <li className="py-2" key={f.id}>
             {f.name}<br/>
@@ -16,12 +13,10 @@ class Location extends Component {
         </li>)
     }
 
-    handleOnClick = () => {
-        this.setState({renderForm: true})
+    const handleOnClick = () => {
+        //update renderForm to true
+        console.log("clicked!")
     }
-
-    render() {
-        const {place, match} = this.props
 
         return (
             <div className='location p-8 flex'>  
@@ -31,15 +26,15 @@ class Location extends Component {
                     <p>{place.notes}</p>
                     <h2>Food at this Location:</h2>
                     <ul>
-                        {this.renderFoodSources(place.food_sources)}
-                        <li className="py-2"><button onClick={this.handleOnClick}>Add new food-source at this location</button></li>
+                        {renderFoodSources(place.food_sources)}
+                        <li className="py-2"><button onClick={handleOnClick}>Add new food-source at this location</button></li>
                     </ul>
                 </div>
 
-                {this.state.renderForm ? < FoodSourceForm place={place} /> : null}
+                {/* {this.props.renderForm ? < FoodSourceForm place={place} /> : null} */}
             </div>
         );
-    }
+    
     
   }
 
