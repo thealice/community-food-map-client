@@ -22,7 +22,7 @@ const LocationCard = ({location}) => {
             </div>
             
             <ul className="p-6 bg-white py-1 text-gray-900">
-                <li><Address place={location} /></li>
+                {/* <li><Address place={location} /></li> */}
                 <li>{notes}</li>
                 {renderFoodSources}
             </ul>

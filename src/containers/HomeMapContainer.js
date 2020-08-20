@@ -5,6 +5,11 @@ const mapStyle = {
   width: '100%',
   height: '100%'
 };
+const containerStyle = {
+  position: 'absolute',  
+  width: '75%',
+  height: '100%'
+}
 
 export class MapContainer extends Component {
   render() {
@@ -17,6 +22,7 @@ export class MapContainer extends Component {
          lat: 37.853954,
          lng: -122.2512007
         }}
+        containerStyle={containerStyle}
         
       />
     );

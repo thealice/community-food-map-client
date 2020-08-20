@@ -4,7 +4,8 @@ import { fetchLocations } from '../actions/fetchLocations';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import LocationsList from '../components/LocationsList'
 import Location from '../components/Location';
-import { MapContainer } from './MapContainer';
+import HomeMapContainer from './HomeMapContainer';
+import MapContainer from './MapContainer';
 import LocationForm from '../components/LocationForm'
 import About from '../components/About'
 
@@ -24,16 +25,21 @@ class LocationsContainer extends Component {
 
             <Route exact path='/locations/new' component={LocationForm} />
             <Route exact path='/about' component={About} />
-
+            <Route exact path='/map' component={MapContainer} />
             <Route exact path='/locations/:id' render={routerProps => {
               return <Location locations={this.props.locations} {...routerProps} />;
             } } />
 
             <Route path='/' render={routerProps => {
               return (
-                <div className="locations-container p-8 flex">
-                  {/* <MapContainer />  */}
-                  <LocationsList {...routerProps} locations={this.props.locations} />
+                <div className="locations-container pt-4 flex">
+                  <div className="w-3/4 mr-2">
+                    <HomeMapContainer locations={this.props.locations} />
+                  </div>
+                  <div className="flex-1">
+                    <LocationsList {...routerProps} locations={this.props.locations} />
+                  </div>
+                  
                 </div> )}
             }/>
  
