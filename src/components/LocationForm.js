@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StyledForm from '../styles/index.js'
 import { updateLocationForm } from '../actions/locationForm'
-import { resetLocationForm } from '../actions/locationForm'
 import { createLocation } from '../actions/createLocation'
 
 class LocationForm extends Component {
@@ -20,6 +19,7 @@ class LocationForm extends Component {
         //reset form values and
         //redirect to location show page
         this.props.createLocation(this.props.formData, this.props.history)
+
     }
 
     render() {
@@ -73,9 +73,6 @@ const mapDispatchToProps = dispatch => {
     return {
         updateLocationForm: (name, value) => {
             dispatch(updateLocationForm(name, value))
-        },
-        resetLocationForm: () => {
-            dispatch(resetLocationForm())
         },
         createLocation: (formData, history) => {
             dispatch(createLocation(formData, history))
