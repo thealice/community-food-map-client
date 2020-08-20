@@ -3,6 +3,18 @@ import StyledForm from '../styles/index.js'
 
 class FoodSourceForm extends Component {
 
+    handleOnSubmit = (e) => {
+        e.preventDefault();
+        // prevent default
+        // dispatch createFoodSource
+        // reset form
+        // set renderForm state back to false so form doesn't show on location page unless button is clicked
+    }
+
+    handleOnChange = (e) => {
+
+    }
+
     render() {
         
         return (
