@@ -16,10 +16,9 @@ export default (state=initialState, action) => {
     // console.log(action)
     switch (action.type) {
     case 'UPDATE_LOCATION_FORM':
-        debugger
         return {
             ...state,
-            formData: {[action.formData.name]: action.formData.value}
+            [action.formData.name]: action.formData.value
         }
     case 'RESET_LOCATION_FORM':
         return initialState
