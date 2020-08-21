@@ -1,14 +1,15 @@
 import { resetFoodSourceForm } from './foodSourceForm'
 
-export const createFoodSource = (foodData, history) => {
+export const createFoodSource = (foodData, locationId, history) => {
   
     const sendableFoodData = {
       name: foodData.name,
       notes: foodData.notes,
-      location_id: parseInt(foodData.locationId),
+      location_id: parseInt(locationId),
       user_id: parseInt(foodData.userId),
       available: foodData.available
     }
+    console.log(sendableFoodData)
 
     return (dispatch) => {
         return fetch('http://localhost:3000/api/v1/food_sources', {
