@@ -4,7 +4,6 @@ import { fetchLocations } from '../actions/fetchLocations';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import LocationsList from '../components/LocationsList'
 import Location from '../components/Location';
-import HomeMapContainer from './HomeMapContainer';
 import MapContainer from './MapContainer';
 import LocationForm from '../components/LocationForm'
 import About from '../components/About'
@@ -34,7 +33,7 @@ class LocationsContainer extends Component {
               return (
                 <div className="locations-container pt-4 flex">
                   <div className="w-3/4 mr-2">
-                    <HomeMapContainer locations={this.props.locations} />
+                    <MapContainer locations={this.props.locations} />
                   </div>
                   <div className="flex-1">
                     <LocationsList {...routerProps} locations={this.props.locations} />
