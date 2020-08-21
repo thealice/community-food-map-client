@@ -1,6 +1,6 @@
 import { resetFoodSourceForm } from './foodSourceForm'
 
-export const createFoodSource = (foodData, locationId, history) => {
+export const createFoodSource = (foodData, locationId) => {
   
     const sendableFoodData = {
       name: foodData.name,
@@ -9,7 +9,6 @@ export const createFoodSource = (foodData, locationId, history) => {
       user_id: parseInt(foodData.userId),
       available: foodData.available
     }
-    console.log(sendableFoodData)
 
     return (dispatch) => {
         return fetch('http://localhost:3000/api/v1/food_sources', {
@@ -26,8 +25,9 @@ export const createFoodSource = (foodData, locationId, history) => {
           } else {
             // reset foodSource form values
             dispatch(resetFoodSourceForm())
-            // reroute to the location page
-            history.push(`/locations/${responseJSON.data.attributes.location_id}`)
+            // load the location page
+            // Either add currentLocation to state and use that in
+            // individual location pages or ADD_FOODSOURCE_TO_LOCATION here    
           }
         })
       }

@@ -8,10 +8,6 @@ import { createFoodSource } from '../actions/createFoodSource';
 
 class Location extends Component {
     
-    // componentWillUnmount() {
-    //     this.props.resetFoodSourceForm()
-    // }
-    
 
     renderFoodSources = (food_sources) => {
        return food_sources.map(f => 

@@ -8,13 +8,13 @@ class FoodSourceForm extends Component {
 
     handleOnSubmit = (e) => {
         e.preventDefault();
-        const { formData, place, history } = this.props
+        const { formData, place } = this.props
         const locationId = place.id
         // prevent default
         // dispatch createFoodSource
         // reset form
-        // set renderForm state back to false so form doesn't show on location page unless button is clicked
-        this.props.createFoodSource(formData, locationId, history)
+        // set renderForm state back to false
+        this.props.createFoodSource(formData, locationId)
     }
 
     handleOnChange = (e) => {
@@ -58,8 +58,8 @@ const mapDispatchToProps = dispatch => {
         updateFoodSourceForm: (name, value) => {
             dispatch(updateFoodSourceForm(name, value))
         },
-        createFoodSource: (formData, history) => {
-            dispatch(createFoodSource(formData, history))
+        createFoodSource: (formData, locationId) => {
+            dispatch(createFoodSource(formData, locationId))
         }
     }
 }
