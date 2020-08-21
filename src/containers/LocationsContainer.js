@@ -31,11 +31,11 @@ class LocationsContainer extends Component {
 
             <Route path='/' render={routerProps => {
               return (
-                <div className="locations-container pt-4 flex">
-                  <div className="w-3/4 mr-2">
+                <div className="locations-container pt-4 flex flex-wrap">
+                  <div className="w-full mb-4">
                     <MapContainer locations={this.props.locations} />
                   </div>
-                  <div className="flex-1">
+                  <div className="w-full mb-4">
                     <LocationsList {...routerProps} locations={this.props.locations} />
                   </div>
                   
