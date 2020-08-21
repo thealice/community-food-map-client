@@ -44,7 +44,7 @@ class Location extends Component {
                     </ul>
                 </div>
 
-                {(this.props.renderForm) ? < FoodSourceForm place={place} /> : null}
+                {(this.props.renderForm) ? < FoodSourceForm place={place} history={history} /> : null}
             </div>
         );
     }
