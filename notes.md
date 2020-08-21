@@ -13,21 +13,24 @@
     ~~-[] save currentLocation to store/state?~~
     ~~-[] Add currentLocation to local state of Location component?~~
 -[x] Add foodsouce form directly on location show page
--[] Get foodsource form post fetch working
-    -[] Save foodsource to backend
-    -[] Add foodSource To location state
-    -[] Reset FoodSource form
-    -[] set renderForm to false
-    -[] redirect back to location
+-[x] Get foodsource form post fetch working
+    -[x] Save foodsource to backend
+    -[] Should I fetchLocation upload location pageload? or Add Foodsource to location state?
+    -[x] Reset FoodSource form
+    -[x] set renderForm to false
+    -[x] reload location
     -[] STRETCH: Add Foodsources to store for ALL foodsources(fetch foodsources in a component did mount somewhere)
 -[x] Hide add foodsource form until button is clicked
 -[] fix up styled form component
 -[x] Add "About" component and blurb
--[] 
--[] Add MapContainer to homepage
+-[] Add Readme
+-[] Blog
+-[x] Add MapContainer to homepage
 -[] Place markers for each location
+-[] Safely add API key
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main
+-[] STRETCH: Improve performance of map with clustering?
 -[] STRETCH: add update/delete functionality for locations/foodsources
 -[] STRETCH: add user login/logout
 -[] STRETCH: limit edit/delete to owner of location/foodsource
@@ -35,7 +38,7 @@
 -[] STRETCH: add map filters so map will change depending on region, etc.
 -[] STRETCH: clicking on Location Cards will popup info window on map
 -[] STRETCH: Add Search
--[] TODO: add instructions to forms
+-[] TODO: add instructions to forms or about page
 -[] TODO: right now user_id and availability are hardcoded into the food source form's FormData in the fooSourceForm reducer as initial state. Update as you add users and availability
 -[] TODO: right now user_id, region_id and zoom are hardcoded into the location forms's FormData in the locationForm reducer as initial state. Update this as you add user and regional functionality (and consider removing zoom data from database and only using it on frontend?)
 -[] TODO: LocationForm input for lat and lng currently number with step 'any', ideally this would be set so only valid lat and lng numbers would be accepted.
