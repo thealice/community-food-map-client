@@ -7,9 +7,9 @@
 -[x] Link Location Card to Location show page
 -[x] after new location form is submitted, redirect to newly create location's show page
 -[x] update address info that shows on location show page
--[] re-evaluate when to passdown props and when to mapStateToProp
+-[x] re-evaluate when to passdown props and when to mapStateToProp
     -[] fix app rendering/performance
-    -[] pass locations down to individual location. set place in Location component. 
+    -[x] pass locations down to individual location. set place in Location component. 
     ~~-[] save currentLocation to store/state?~~
     ~~-[] Add currentLocation to local state of Location component?~~
 -[x] Add foodsouce form directly on location show page
