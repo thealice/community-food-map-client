@@ -11,13 +11,14 @@ const initialState = {
 }
 
 export default (state=initialState, action) => {
-    console.log(action)
+    // console.log(action)
     switch (action.type) {
     case 'UPDATE_FOODSOURCE_FORM':
-        return {
+        const returnVal = {
             ...state,
-            formData: {[action.formData.name]: action.formData.value}
-        }
+            formData: {...state.formData, [action.newFormData.name]: action.newFormData.value}
+          }
+        return returnVal
     case 'RESET_FOODSOURCE_FORM':
         return {
             ...initialState,
