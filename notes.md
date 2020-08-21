@@ -27,6 +27,7 @@
 -[] Blog
 -[x] Add MapContainer to homepage
 -[] Place markers for each location
+-[] STRETCH: Use Marker clustering
 -[] Safely add API key
 -[] Add LocationsContainer and place in MainContainer when on '/'
     -[] Change to connect w/redux for loactions is on locations container instead of main

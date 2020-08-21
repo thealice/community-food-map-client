@@ -7,39 +7,64 @@ const mapStyle = {
 };
 const containerStyle = {
   position: 'absolute',  
-  width: '75%',
+  width: '100%',
   height: '100%'
 }
 
 export class MapContainer extends Component {
-    
-    state = {
-      showingInfoWindow: false,  //Hides or the shows the infoWindow
-      activeMarker: {},          //Shows the active marker upon click
-      selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
-    };
 
-    onMarkerClick = (props, marker, e) =>
+  state = {
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {},
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
       this.setState({
-        selectedPlace: props,
-        activeMarker: marker,
-        showingInfoWindow: true
+        showingInfoWindow: false,
+        activeMarker: null
       });
+    }
+  };
 
-    onClose = props => {
-      if (this.state.showingInfoWindow) {
-        this.setState({
-          showingInfoWindow: false,
-          activeMarker: null
-        });
-      }
-    };
+  renderMarkers = () => {
+
+    return this.props.locations.map(place => {
+      return (
+          <Marker 
+            id={place.id}
+            key={place.id}
+            position={{ lat: parseFloat(place.lat), lng: parseFloat(place.lng)}}
+            onClick={this.onMarkerClick}
+            name={place.name}
+          >
+            < InfoWindow
+               marker={this.state.activeMarker}
+               visible={this.state.showingInfoWindow}
+               onClose={this.onClose}
+            >
+              <div>
+                <h4>{this.state.selectedPlace.name}</h4>
+              </div>
+            </InfoWindow>
+          </Marker>
+      )
+    })
+  };
 
   render() {
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={11}
         style={mapStyle}
         initialCenter={{
          lat: 37.853954,
@@ -48,19 +73,8 @@ export class MapContainer extends Component {
         containerStyle={containerStyle}
         
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Alice's House"}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
+        {this.renderMarkers()}
+
       </Map>
     );
   }
