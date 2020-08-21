@@ -6,10 +6,10 @@ export const renderFoodSourceForm = () => {
 }
 
 export const updateFoodSourceForm = (name, value) => {
-    const formData = { name, value}
+    const newFormData = { name, value }
     return {
         type: 'UPDATE_FOODSOURCE_FORM', 
-        formData
+        newFormData
     }
 }
 
