@@ -25,7 +25,7 @@ class Location extends Component {
     render() {
     
         const { match, history } = this.props
-        const place = this.props.locations.find( ({ id }) => id === Number(match.params.id) );
+        const place = this.props.locations.find( ({ id }) => id === match.params.id );
 
         return (
             <div className='location p-8 flex'>  

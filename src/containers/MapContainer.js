@@ -45,15 +45,19 @@ export class MapContainer extends Component {
             position={{ lat: parseFloat(place.lat), lng: parseFloat(place.lng)}}
             onClick={this.onMarkerClick}
             name={place.name}
+            foods={place.food_sources}
           >
             < InfoWindow
                marker={this.state.activeMarker}
                visible={this.state.showingInfoWindow}
                onClose={this.onClose}
+               content={`
+                <div>
+                 <h4>{this.state.selectedPlace.name}</h4>
+                </div>
+              `}
             >
-              <div>
-                <h4>{this.state.selectedPlace.name}</h4>
-              </div>
+
             </InfoWindow>
           </Marker>
       )
