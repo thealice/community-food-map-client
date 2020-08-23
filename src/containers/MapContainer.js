@@ -1,89 +1,31 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import { MapWithMarkers } from '../components/MapWithMarkers'
 
-const mapStyle = {
-  width: '100%',
-  height: '100%'
-};
-const containerStyle = {
-  position: 'absolute',  
-  width: '100%',
-  height: '100%'
-}
-
-export class MapContainer extends Component {
-
+class MapContainer extends Component {
+  
   state = {
-    showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-  };
+      selectedMarker: false
+  }
 
-  onMarkerClick = (props, marker, e) =>
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
-
-  onClose = props => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  };
-
-  renderMarkers = () => {
-
-    return this.props.locations.map(place => {
-      return (
-          <Marker 
-            id={place.id}
-            key={place.id}
-            position={{ lat: parseFloat(place.lat), lng: parseFloat(place.lng)}}
-            onClick={this.onMarkerClick}
-            name={place.name}
-            foods={place.food_sources}
-          >
-            < InfoWindow
-               marker={this.state.activeMarker}
-               visible={this.state.showingInfoWindow}
-               onClose={this.onClose}
-               content={`
-                <div>
-                 <h4>{this.state.selectedPlace.name}</h4>
-                </div>
-              `}
-            >
-
-            </InfoWindow>
-          </Marker>
-      )
-    })
-  };
+  handleOnClick = (marker, event) => {
+    this.setState({ selectedMarker: marker })
+  }
 
   render() {
+
     return (
-      <Map
-        google={this.props.google}
-        zoom={11}
-        style={mapStyle}
-        initialCenter={{
-         lat: 37.853954,
-         lng: -122.2512007
-        }}
-        containerStyle={containerStyle}
-        
-      >
-        {this.renderMarkers()}
-
-      </Map>
-    );
+      <MapWithMarkers
+        selectedMarker={this.state.selectedMarker}
+        markers={this.props.locations}
+        onClick={this.handleOnClick}
+        // googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_GMAPS_API_KEY}&libraries=geometry,drawing,places`}
+        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `400px` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    )
   }
+  
 }
-
-export default GoogleApiWrapper({
-  apiKey: ''
-})(MapContainer);
+export default MapContainer;
