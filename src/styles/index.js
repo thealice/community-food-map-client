@@ -9,13 +9,13 @@ const StyledForm = styled.main.attrs({
       ${tw`bg-transparent text-center py-8 px-5 max-w-xl h-auto`}
     }
     input {
-      ${tw`border-gray-300 mb-4 w-full border-solid border rounded py-2 px-4`}
+      ${tw`border-purple-300 mb-4 w-full border-solid bg-purple-100 border rounded py-2 px-4`}
     }
     textarea {
-      ${tw`border-gray-300 mb-4 w-full border-solid border rounded py-2 px-4`}
+      ${tw`border-purple-300 mb-4 w-full border-solid bg-purple-100 border rounded py-2 px-4`}
     }
     button {
-      ${tw`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-blue-700 rounded`}
+      ${tw`bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 border border-purple-800 rounded`}
     }
   }
 `

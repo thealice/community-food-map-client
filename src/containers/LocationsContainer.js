@@ -46,7 +46,7 @@ class LocationsContainer extends Component {
     }
     return (
       <div className="loading">
-        <div className="p-8 flex">Loading Locations...</div>
+        <div className="p-8 flex text-purple-100">Loading Locations...</div>
       </div>
     )
   }
