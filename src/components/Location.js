@@ -4,6 +4,7 @@ import Address from './Address';
 import FoodSourceForm from './FoodSourceForm';
 import { updateFoodSourceForm, renderFoodSourceForm, resetFoodSourceForm } from '../actions/foodSourceForm';
 import { createFoodSource } from '../actions/createFoodSource';
+import { StyledButton } from '../styles/index.js'
 
 
 class Location extends Component {
@@ -12,8 +13,10 @@ class Location extends Component {
     renderFoodSources = (food_sources) => {
        return food_sources.map(f => 
         <li className="py-2" key={f.id}>
-            {f.name}<br/>
-            {f.notes}<br />
+            <span className="text-purple-400">{f.name}</span>
+            <ul>
+                <li >{f.notes}</li>
+            </ul>
         </li>)
     }
 
@@ -29,15 +32,20 @@ class Location extends Component {
 
         return (
             <div className='location p-8 flex bg-gray-900 rounded-lg h-screen'>  
-                <div className='flex-auto text-gray-200'>
+                <div className='text-gray-200'>
                     <h1>{place.name}</h1>
+                    <hr className="mb-3" />
                     <p><Address place={place} /></p>
+                    <hr className="my-3" />
                     <p>{place.notes}</p>
-                    <h2>Food at this Location:</h2>
-                    <ul>
+                    <h2 className="mt-4">Food at this Location:</h2>
+                    <ul className="list-inside mx-4">
                         {this.renderFoodSources(place.food_sources)}
-                        <li className="py-2"><button onClick={this.handleOnClick}>Add new food-source at this location</button></li>
                     </ul>
+                    <hr className="my-3" />
+                    <StyledButton>
+                        <button onClick={this.handleOnClick}>Add Food</button>
+                    </StyledButton>
                 </div>
 
                 {(this.props.renderForm) ? < FoodSourceForm place={place} history={history} /> : null}
