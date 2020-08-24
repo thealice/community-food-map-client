@@ -6,7 +6,12 @@ module.exports = {
     'src/**/*.tsx',
     'public/**/*.html',
   ],
-  theme: {},
+  theme: {
+    container: {
+      center: true,
+      padding: '2rem'
+    }
+  },
   variants: {},
   plugins: [
     require('@tailwindcss/typography')

@@ -7,6 +7,7 @@ h1 {
 }
 h2 {
     @apply text-xl;
+    @apply font-bold;
 }
 h3 {
     @apply text-lg;
