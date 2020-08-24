@@ -7,6 +7,8 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps"
+import Address from './Address';
+import { Link } from 'react-router-dom';
 
 export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
 
@@ -24,16 +26,30 @@ export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
           >
             {props.selectedMarker === marker &&
               <InfoWindow>
-                <div>
-                  {marker.name}
-                </div>
+                <>
+                  <div className="font-bold uppercase underline">
+                    <Link to={`/locations/${marker.id}`} >{marker.name}</Link>
+                  </div>
+                  <div>
+                    <Address place={marker} />
+                  </div>
+                  <div className="food-sources mt-2">
+                    {marker.food_sources.map(f => 
+                      <div className="food-source">
+                          <h4 className="font-semibold">{f.name}</h4>
+                          <p>{f.notes}</p>
+                      </div>
+                    )}
+                  </div>
+                </>
               </InfoWindow>
+
             }
           </Marker>
         )
       })}
 
     </GoogleMap>
-    
+
   )
 })

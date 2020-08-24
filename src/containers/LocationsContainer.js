@@ -24,7 +24,6 @@ class LocationsContainer extends Component {
 
             <Route exact path='/locations/new' component={LocationForm} />
             <Route exact path='/about' component={About} />
-            <Route exact path='/map' component={MapContainer} />
             <Route exact path='/locations/:id' render={routerProps => {
               return <Location locations={this.props.locations} {...routerProps} />;
             } } />
