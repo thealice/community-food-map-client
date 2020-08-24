@@ -14,11 +14,11 @@ const LocationCard = ({location}) => {
     return (
         <div className='location-card'>
             
-            <div className='text-center py-3 bg-transparent text-purple-100 border-2 font-bold' >
+            <div className='text-center py-3 bg-transparent text-purple-100 border-2 hover:border-purple-600 hover:text-purple-200 rounded-lg' >
                 <h2>{name}</h2>
                 <p>{notes}</p>
                 {/* <Address place={location} /> */}
-                {renderFoodSources}
+                {/* {renderFoodSources} */}
             </div>
         </div>
     )
