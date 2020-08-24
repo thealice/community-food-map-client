@@ -5,19 +5,16 @@ import LocationCard from './LocationCard'
 const LocationsList = ({ locations }) => {
 
     const renderLocationCards = locations.map(location => 
-        <li className="mb-4 shadow-md bg-white" key={location.id}>
-            <Link to={`/locations/${location.id}`} >
-                <LocationCard location={location} />
-            </Link>
-        </li>
+        <Link to={`/locations/${location.id}`} >
+            <LocationCard location={location} />
+        </Link>
     )
     
     return (
-        <div className="locations-list flex-col max-w-sm">
-            <ul>
-                <Link to="/locations/new"><li className="text-center"><button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-800 rounded mb-3">Add new Location</button></li></Link>
-                {renderLocationCards}
-            </ul> 
+        <div className="locations-list">
+            
+            {renderLocationCards}
+
         </div>
 
     )

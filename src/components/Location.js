@@ -28,7 +28,7 @@ class Location extends Component {
         const place = this.props.locations.find( ({ id }) => id === match.params.id );
 
         return (
-            <div className='location p-8 flex bg-gray-900 rounded-lg'>  
+            <div className='location p-8 flex bg-gray-900 rounded-lg h-screen'>  
                 <div className='flex-auto text-gray-200'>
                     <h1>{place.name}</h1>
                     <p><Address place={place} /></p>
