@@ -2,7 +2,7 @@ import styled from "styled-components"
 import tw from "twin.macro"
 
 const StyledForm = styled.main.attrs({
-  className: "flex-col h-screen justify-center bg-gray-800 max-w-xl h-auto",
+  className: "flex-col justify-center bg-gray-800 max-w-xl rounded-lg",
 })`
   & {
     form {
