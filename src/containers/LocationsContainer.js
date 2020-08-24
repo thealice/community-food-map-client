@@ -53,11 +53,6 @@ class LocationsContainer extends Component {
 
 }
 
-LocationsContainer.defaultProps = {
-  locations: []
-}
-
-
 const mapStateToProps = state => {
   return state.locations
 }

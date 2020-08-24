@@ -2,11 +2,11 @@ import styled from "styled-components"
 import tw from "twin.macro"
 
 const StyledForm = styled.main.attrs({
-  className: "flex-col h-screen justify-center bg-yellow-100",
+  className: "flex-col h-screen justify-center bg-gray-800 max-w-xl h-auto",
 })`
   & {
     form {
-      ${tw`bg-white text-center rounded py-8 px-5 shadow max-w-xl`}
+      ${tw`bg-transparent text-center py-8 px-5 max-w-xl h-auto`}
     }
     input {
       ${tw`border-gray-300 mb-4 w-full border-solid border rounded py-2 px-4`}
