@@ -27,12 +27,12 @@ class LocationForm extends Component {
         const { name, notes, street, city, state, zipcode, lat, lng} = this.props
         
         return (
-            <div className="location-input p-8">
-                
+            <div className="location-input px-8 max-w-xl">
+                <h1 className="text-center text-gray-300">Add a new pickup location</h1>
                 <StyledForm>
                     <form onSubmit={this.handleOnSubmit}>
                         <label htmlFor="name" className="hidden" >Name:</label>
-                        <input onChange={this.handleOnChange} type="text" placeholder="Name" name="name" value={name}/>
+                        <input onChange={this.handleOnChange} type="text" placeholder="Name (required)" name="name" value={name} required/>
 
                         <label htmlFor="notes" className="hidden" >Notes:</label>
                         <textarea onChange={this.handleOnChange} placeholder="Notes...for example: 'Fruit accessible from sidewalk is free to take, please do not hop fence.'" name="notes" value={notes} />

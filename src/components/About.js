@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
 
     return (
-        <div className="about p-8 flex text-purple-100">
+        <div className="about p-8 flex text-purple-100 bg-gray-900 rounded">
             <p>
                 This food map is intended to be a mutual aid resource.
                 <h2>Do you have extra food to share?</h2>

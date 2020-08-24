@@ -31,9 +31,9 @@ class Location extends Component {
         const place = this.props.locations.find( ({ id }) => id === match.params.id );
 
         return (
-            <div className='location p-8 flex bg-gray-900 rounded-lg h-screen'>  
+            <div className='location p-8 max-w-lg bg-gray-900 rounded-lg h-screen'>  
                 <div className='text-gray-200'>
-                    <h1>{place.name}</h1>
+                    <h1 className="text-gray-300">{place.name}</h1>
                     <hr className="mb-3" />
                     <p><Address place={place} /></p>
                     <hr className="my-3" />

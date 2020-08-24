@@ -28,7 +28,7 @@ class FoodSourceForm extends Component {
         console.log(this.props)
 
         return (
-            <div className="foodsource-form flex-auto">
+            <div className="foodsource-form">
                 
                 <StyledForm>
                     <form onSubmit={this.handleOnSubmit}>
