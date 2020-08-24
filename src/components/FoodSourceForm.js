@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import StyledForm from '../styles/index.js'
+import { StyledForm } from '../styles/index.js'
 import { createFoodSource } from '../actions/createFoodSource'
 import { updateFoodSourceForm } from '../actions/foodSourceForm';
 

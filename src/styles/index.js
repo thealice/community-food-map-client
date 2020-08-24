@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import tw from "twin.macro"
 
-const StyledForm = styled.main.attrs({
+export const StyledForm = styled.main.attrs({
   className: "flex-col justify-center bg-gray-800 max-w-xl rounded-lg",
 })`
   & {
@@ -15,8 +15,10 @@ const StyledForm = styled.main.attrs({
       ${tw`border-purple-300 mb-4 w-full border-solid bg-purple-100 border rounded py-2 px-4`}
     }
     button {
-      ${tw`bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 border border-purple-800 rounded`}
+      ${tw`bg-purple-700 hover:bg-transparent hover:border-purple-300 text-white font-bold py-2 px-4 border border-purple-800 rounded`}
     }
   }
 `
-export default StyledForm
+export const StyledButton = styled.button`
+  ${tw`hover:bg-purple-700 text-lg mt-3 bg-transparent hover:border-purple-800 text-white font-bold py-2 px-4 border border-purple-300 rounded`}
+`;
