@@ -6,9 +6,9 @@ module.exports = {
     'src/**/*.tsx',
     'public/**/*.html',
   ],
-  theme: {
-    extend: {},
-  },
+  theme: {},
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }
