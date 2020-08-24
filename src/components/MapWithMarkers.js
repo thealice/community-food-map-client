@@ -14,7 +14,7 @@ export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
 
   return (
 
-    <GoogleMap defaultZoom={11} defaultCenter={{ lat: 37.804838, lng: -122.341980 }} >
+    <GoogleMap defaultZoom={11} mapId="b809c56ccaa0fad7" defaultCenter={{ lat: 37.804838, lng: -122.341980 }} >
   
       {props.markers.map(marker => {
         const onClick = props.onClick.bind(this, marker)
