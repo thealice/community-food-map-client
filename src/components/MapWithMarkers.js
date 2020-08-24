@@ -28,7 +28,7 @@ export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
               <InfoWindow>
                 <>
                   <div className="font-bold uppercase underline">
-                    <Link to={`/locations/${marker.id}`} >{marker.name}</Link>
+                    <Link className="text-purple-700" to={`/locations/${marker.id}`} >{marker.name}</Link>
                   </div>
                   <div>
                     <Address place={marker} />

@@ -20,5 +20,5 @@ export const StyledForm = styled.main.attrs({
   }
 `
 export const StyledButton = styled.button`
-  ${tw`hover:bg-purple-700 text-lg mt-3 bg-transparent hover:border-purple-800 text-white font-bold py-2 px-4 border border-purple-300 rounded`}
+  ${tw`hover:bg-purple-800 text-lg mt-3 bg-transparent hover:border-purple-800 text-white font-bold py-2 px-4 border border-purple-300 rounded`}
 `;

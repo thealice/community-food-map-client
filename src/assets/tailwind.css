@@ -4,13 +4,20 @@ h1 {
     @apply text-2xl;
     @apply uppercase;
     @apply font-bold;
+    @apply my-3;
+    @apply text-purple-200;
 }
 h2 {
     @apply text-xl;
     @apply font-bold;
+    @apply my-2;
+    @apply text-purple-200;
 }
 h3 {
     @apply text-lg;
+    @apply font-semibold;
+    @apply my-2;
+    @apply text-purple-200;
 }
 a {
     @apply text-purple-300;

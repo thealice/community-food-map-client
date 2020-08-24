@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchLocations } from '../actions/fetchLocations';
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import LocationsList from '../components/LocationsList'
 import Location from '../components/Location';
 import MapContainer from './MapContainer';
