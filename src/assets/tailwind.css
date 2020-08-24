@@ -1,5 +1,20 @@
 @tailwind base;
 
+h1 {
+    @apply text-2xl;
+    @apply uppercase;
+    @apply font-bold;
+}
+h2 {
+    @apply text-xl;
+}
+h3 {
+    @apply text-lg;
+}
+a {
+    @apply text-purple-300;
+}
+
 @tailwind components;
 
 @tailwind utilities;
