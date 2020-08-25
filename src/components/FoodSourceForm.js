@@ -25,7 +25,6 @@ class FoodSourceForm extends Component {
 
     render() {
         const { name, notes } = this.props
-        console.log(this.props)
 
         return (
             <div className="foodsource-form">
