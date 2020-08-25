@@ -30,7 +30,7 @@ class LocationsContainer extends Component {
 
             <Route path='/' render={routerProps => {
               return (
-                <div className="locations-container pt-4">
+                <div className="locations-container">
                     <MapContainer locations={this.props.locations} />
                     <LocationsList {...routerProps} locations={this.props.locations} />
                 </div> )}
