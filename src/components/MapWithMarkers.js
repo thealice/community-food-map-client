@@ -10,7 +10,7 @@ import {
 import Address from './Address';
 import { Link } from 'react-router-dom';
 
-export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
+const MapWithMarkers = props => {
 
   return (
 
@@ -52,4 +52,6 @@ export const MapWithMarkers = compose(withScriptjs, withGoogleMap)(props => {
     </GoogleMap>
 
   )
-})
+}
+
+export default compose(withScriptjs, withGoogleMap)(MapWithMarkers);

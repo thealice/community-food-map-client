@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MapWithMarkers } from '../components/MapWithMarkers'
+import MapWithMarkers from '../components/MapWithMarkers'
 
 class MapContainer extends Component {
   
