@@ -5,7 +5,7 @@ import { updateLocationForm } from '../actions/locationForm'
 import { createLocation } from '../actions/createLocation'
 
 class LocationForm extends Component {
-    
+
     handleOnChange = (e) => {
         const { name, value } = e.target
         // dispatch the action created by the action creator
@@ -30,6 +30,7 @@ class LocationForm extends Component {
             <div className="location-input px-8 max-w-xl">
                 <h1 className="text-center text-gray-300">Add a new pickup location</h1>
                 <StyledForm>
+               
                     <form onSubmit={this.handleOnSubmit}>
                         <label htmlFor="name" className="hidden" >Name:</label>
                         <input onChange={this.handleOnChange} type="text" placeholder="Name (required)" name="name" value={name} required/>

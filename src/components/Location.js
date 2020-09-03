@@ -8,7 +8,6 @@ import { StyledButton } from '../styles/index.js'
 
 
 class Location extends Component {
-    
 
     renderFoodSources = (food_sources) => {
        return food_sources.map(f => 
@@ -31,7 +30,9 @@ class Location extends Component {
 
         return (
             <div className='location px-8 py-6 max-w-lg bg-gray-900 rounded-lg h-screen'>  
+
                 <div className='text-gray-200'>
+                   
                     <h1 className="text-gray-300 mt-0">{place.name}</h1>
                     <hr className="mb-3" />
                     <p><Address place={place} /></p>
