@@ -10,8 +10,8 @@
 - [x] re-evaluate when to passdown props and when to mapStateToProp
     - [ ] fix app rendering/performance
     - [x] pass locations down to individual location. set place in Location component. 
-    ~~- [ ] save currentLocation to store/state?~~
-    ~~- [ ] Add currentLocation to local state of Location component?~~
+    - [ ] ~~save currentLocation to store/state?~~
+    - [ ] ~~Add currentLocation to local state of Location component?~~
 - [x] Add foodsouce form directly on location show page
 - [x] Get foodsource form post fetch working
     - [x] Save foodsource to backend
@@ -19,16 +19,16 @@
     - [x] Reset FoodSource form
     - [x] set renderForm to false
     - [x] reload location
-    - [] STRETCH: Add Foodsources to store for ALL foodsources(fetch foodsources in a component did mount somewhere)
+    - [ ] STRETCH: Add Foodsources to store for ALL foodsources(fetch foodsources in a component did mount somewhere)
 - [x] Hide add foodsource form until button is clicked
 - [ ] fix up styled form component
 - [x] Add "About" component and blurb
-- [ ] Add Readme
-- [ ] Blog
+- [ ] Improve Readme
+- [x] Blog: https://medium.com/swlh/react-redux-fundamentals-7438b4638e57?source=friends_link&sk=aa9092ba310c7c50c47c98cd1c542367
+- [ ] Safely re-add API key
 - [x] Add MapContainer to homepage
 - [x] Place markers for each location 
 - [ ] STRETCH: Use Marker clustering
--[x] Safely add API key
 - [ ] Add LocationsContainer and place in MainContainer when on '/'
     - [ ] Change to connect w/redux for loactions is on locations container instead of main
 - [ ] STRETCH: Improve performance of map with clustering?
