@@ -1,3 +1,5 @@
+<img width="964" alt="homepage for Community Food Map" src="https://raw.githubusercontent.com/thealice/community-food-map-frontend/main/public/community-food-map-lg.png">
+
 The backend of this app can be found at [https://github.com/thealice/community-food-map-backend](https://github.com/thealice/community-food-map-backend). You'll want to clone that and run `rails server` first to get the API going.
 
 Then you'll clone this directory and run `yarn start` to start the app in development mode.
